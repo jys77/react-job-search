@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  text-align: center;
+  margin: 20px 40px;
+}
+
+.Job {
+  width: 60%;
+  border: 1px solid #ccc;
+  box-shadow: 2px 3px #eee;
+  box-sizing: border-box;
+  margin: 10px auto;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Job:hover {
+  cursor: pointer;
+  color: orange;
+  border: 2px solid orange;
+  box-shadow: 2px 3px rgb(250, 194, 91);
+  box-sizing: border-box;
+}
+
+.CardLeft {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.CompanyLogo {
+  height: 30px;
+  float: right;
+}

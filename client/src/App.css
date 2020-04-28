@@ -9,7 +9,7 @@ body {
 }
 
 .Job {
-  width: 60%;
+  width: 100%;
   border: 1px solid #ccc;
   box-shadow: 2px 3px #eee;
   box-sizing: border-box;
@@ -21,9 +21,9 @@ body {
 
 .Job:hover {
   cursor: pointer;
-  color: orange;
-  border: 2px solid orange;
-  box-shadow: 2px 3px rgb(250, 194, 91);
+  color: #3f51b5;
+  border: 2px solid #3f51b5;
+  box-shadow: 2px 3px #eee;
   box-sizing: border-box;
 }
 
@@ -36,4 +36,9 @@ body {
 .CompanyLogo {
   height: 30px;
   float: right;
+}
+
+.Tab {
+  width: 60%;
+  margin: 40px auto 20px;
 }

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Typography from "@material-ui/core/Typography";
 import MobileStepper from "@material-ui/core/MobileStepper";
 import Button from "@material-ui/core/Button";
 import KeyboardArrowLeft from "@material-ui/icons/KeyboardArrowLeft";
@@ -54,12 +53,7 @@ const Jobs = ({ jobs }) => {
   return (
     <div className="Jobs">
       <JobModal open={open} job={selectedJob} handleClose={handleClose} />
-      <Typography variant="h4" component="h1">
-        Entry Level Software Jobs
-      </Typography>
-      <Typography variant="h6" component="h1">
-        Found {numJobs} jobs.
-      </Typography>
+      <div>Found {numJobs} jobs.</div>
       {jobsOnPage.map((job, i) => (
         <Job
           key={i}

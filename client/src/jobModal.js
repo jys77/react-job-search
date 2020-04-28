@@ -15,6 +15,10 @@ const JobModal = ({ job, open, handleClose }) => {
   if (!job.title) {
     return null;
   }
+
+  if (!job.how_to_apply) {
+    job.how_to_apply = "";
+  }
   return (
     <div>
       <Dialog
@@ -39,7 +43,7 @@ const JobModal = ({ job, open, handleClose }) => {
           <DialogContentText
             id="alert-dialog-slide-description"
             dangerouslySetInnerHTML={{
-              __html: `<h3>Description</h3>${job.description}<br><h3>How To Apply</h3>${job.how_to_apply}`,
+              __html: `<h3>Description</h3>${job.description}<br><h3>How to Apply</h3>${job.how_to_apply}`,
             }}
           ></DialogContentText>
         </DialogContent>

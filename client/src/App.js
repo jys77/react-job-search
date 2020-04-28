@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import Jobs from "./Jobs";
+import JobTab from "./JobTab";
 
 const GitHub_Jobs_API = "/api/jobs/github";
 const RemoteOK_Jobs_API = "/api/jobs/remoteok";
@@ -33,7 +34,7 @@ function App() {
 
   return (
     <div className="App">
-      <Jobs jobs={GithubJobList} />
+      <JobTab githubJobs={GithubJobList} remoteJobs={RemoteJobList} />
     </div>
   );
 }

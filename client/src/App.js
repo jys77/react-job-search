@@ -2,24 +2,38 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import Jobs from "./Jobs";
 
-const JOB_API_URL = "/api/jobs";
+const GitHub_Jobs_API = "/api/jobs/github";
+const RemoteOK_Jobs_API = "/api/jobs/remoteok";
 
-const fetchJobs = async (updateCallback) => {
-  const res = await fetch(JOB_API_URL);
-  const json = await res.json();
-  updateCallback(json);
-  console.log({ json });
+const fetchGithubJobs = async (updateCallback) => {
+  const res = await fetch(GitHub_Jobs_API);
+  const githubJobs = await res.json();
+  updateCallback(githubJobs);
+  console.log({ githubJobs });
+};
+
+const fetchRemoteJobs = async (updateCallback) => {
+  const res = await fetch(RemoteOK_Jobs_API);
+  const remoteJobs = await res.json();
+  updateCallback(remoteJobs);
+  console.log({ remoteJobs });
 };
 
 function App() {
-  const [jobList, setJobList] = useState([]);
+  const [GithubJobList, setGithubJobList] = useState([]);
+  const [RemoteJobList, setRemoteJobList] = useState([]);
 
   useEffect(() => {
-    fetchJobs(setJobList);
+    fetchGithubJobs(setGithubJobList);
   }, []);
+
+  useEffect(() => {
+    fetchRemoteJobs(setRemoteJobList);
+  }, []);
+
   return (
     <div className="App">
-      <Jobs jobs={jobList} />
+      <Jobs jobs={GithubJobList} />
     </div>
   );
 }

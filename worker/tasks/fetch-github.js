@@ -17,11 +17,11 @@ const fetchGithub = async () => {
     const jobs = await res.json();
     allJobs.push(...jobs);
     jobCount = jobs.length;
-    console.log("get ", jobCount, " jobs");
+    console.log("get", jobCount, "Github jobs");
     onPage++;
   }
 
-  console.log("Got", allJobs.length, "jobs total.");
+  console.log("Got", allJobs.length, "Github jobs total.");
 
   //filter algorithm
   const jrJobs = allJobs.filter((job) => {
@@ -40,7 +40,7 @@ const fetchGithub = async () => {
     return isJunior;
   });
 
-  console.log("filtered down to", jrJobs.length, "jobs");
+  console.log("filtered down to", jrJobs.length, "Github jobs");
 
   //set in redis
   const success = await setAsync("github", JSON.stringify(jrJobs));

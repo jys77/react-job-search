@@ -1,4 +1,5 @@
 const fetch = require("node-fetch");
+const moment = require("moment");
 const redis = require("redis");
 const { promisify } = require("util");
 const client = redis.createClient();
@@ -46,6 +47,12 @@ const fetchRemote = async () => {
   });
 
   console.log("Filtered to", RemoteJrJobs.length, "remote jobs");
+
+  //change date format
+  RemoteJrJobs.forEach((job) => {
+    const dt = moment(new Date(job.created_at)).format("MM/DD/YYYY");
+    job.created_at = dt;
+  });
 
   //set in redis
   const success = await setAsync("remote", JSON.stringify(RemoteJrJobs));

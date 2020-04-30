@@ -9,9 +9,7 @@ const job = ({ job, clicked }) => {
         <Typography variant="h6">{job.location}</Typography>
       </div>
       <div>
-        <Typography>
-          {job.created_at.split(" ").slice(0, 3).join(" ")}
-        </Typography>
+        <Typography>{job.created_at}</Typography>
       </div>
     </div>
   );
